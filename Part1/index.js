@@ -6,17 +6,26 @@ let board = []
 function play(clickedId) {
     const playerSpan = document.getElementById('player');
     const clickedElement = document.getElementById(clickedId)
+    
 
-    if (playerSpan.innerText === 'X'){
-        playerSpan.innerText = "0";
+
+    if (playerSpan.innerText === 'X' && clickedElement.innerText === ''){
+        playerSpan.innerText = "O";
         clickedElement.innerText = "X";
         board[clickedId] = "X";
     }
-    else {
+    else if(playerSpan.innerText === 'O' && clickedElement.innerText === ''){
         playerSpan.innerText = "X";
         clickedElement.innerText = "O";
-        board[clickedId] = '0';
+        board[clickedId] = 'O';
     }
+    // else{
+    //   playerSpan.innerText = "X";
+    //   clickedElement.innerText = "O";
+    //   board[clickedId] = 'O';
+    // }
+
+  
     console.log(board)
 
   const topLeft = board[0];
@@ -79,15 +88,15 @@ function play(clickedId) {
 }
 function resetGame(){
   board = [undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined];
-  document.getElementById(0).innerText = " ";
-  document.getElementById(1).innerText = " ";
-  document.getElementById(2).innerText = " ";
-  document.getElementById(3).innerText = " ";
-  document.getElementById(4).innerText = " ";
-  document.getElementById(5).innerText = " ";
-  document.getElementById(6).innerText = " ";
-  document.getElementById(7).innerText = " ";
-  document.getElementById(8).innerText = " ";
+  document.getElementById(0).innerText = "";
+  document.getElementById(1).innerText = "";
+  document.getElementById(2).innerText = "";
+  document.getElementById(3).innerText = "";
+  document.getElementById(4).innerText = "";
+  document.getElementById(5).innerText = "";
+  document.getElementById(6).innerText = "";
+  document.getElementById(7).innerText = "";
+  document.getElementById(8).innerText = "";
   document.getElementById('player').innerText="X";
 }
 

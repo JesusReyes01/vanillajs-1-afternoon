@@ -227,7 +227,7 @@ const colorInput = document.getElementById('colorInput');
 
 function setCard() {
   const card = document.getElementById(idInput.value);
-  card.style.color = colorInput.value;
+  card.styles.color = colorInput.value;
 }
 ```
 

@@ -1,5 +1,5 @@
 
-const board = []
+let board = []
 
 
 
@@ -8,13 +8,13 @@ function play(clickedId) {
     const clickedElement = document.getElementById(clickedId)
 
     if (playerSpan.innerText === 'X'){
-        playerSpan.innerText = "O";
-        clickedElement.innertext = "X";
+        playerSpan.innerText = "0";
+        clickedElement.innerText = "X";
         board[clickedId] = "X";
     }
     else {
         playerSpan.innerText = "X";
-        clickedElement.innertext = "O";
+        clickedElement.innerText = "O";
         board[clickedId] = '0';
     }
     console.log(board)
@@ -74,6 +74,20 @@ function play(clickedId) {
   if (boardFull === true) {
     alert("Cat's game, there is no winner");
   }
-}
 
+  
+}
+function resetGame(){
+  board = [undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined];
+  document.getElementById(0).innerText = " ";
+  document.getElementById(1).innerText = " ";
+  document.getElementById(2).innerText = " ";
+  document.getElementById(3).innerText = " ";
+  document.getElementById(4).innerText = " ";
+  document.getElementById(5).innerText = " ";
+  document.getElementById(6).innerText = " ";
+  document.getElementById(7).innerText = " ";
+  document.getElementById(8).innerText = " ";
+  document.getElementById('player').innerText="X";
+}
 
